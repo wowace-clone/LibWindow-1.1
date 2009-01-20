@@ -1,6 +1,6 @@
 ﻿--[[
 Name: LibWindow-1.1
-Revision: $Rev: 34 $
+Revision: $Rev$
 Author(s): Mikk (dpsgnome@mail.com)
 Website: http://old.wowace.com/wiki/LibWindow-1.1
 Documentation: http://old.wowace.com/wiki/LibWindow-1.1
@@ -11,7 +11,7 @@ License: Public Domain
 ]]
 
 local MAJOR = "LibWindow-1.1"
-local MINOR = tonumber(("$Revision: 34 $"):match("(%d+)"))
+local MINOR = tonumber(("$Revision$"):match("(%d+)"))
 
 local lib = LibStub:NewLibrary(MAJOR,MINOR)
 if not lib then return end
@@ -155,7 +155,7 @@ function lib.SavePosition(frame)
 	setStorage(frame, "x", x)
 	setStorage(frame, "y", y)
 	setStorage(frame, "point", point)
-	setStorage(frame, "scale", scale)
+	setStorage(frame, "scale", s)
 	
 	frame:ClearAllPoints()
 	frame:SetPoint(point, frame:GetParent(), point, x/s, y/s);
