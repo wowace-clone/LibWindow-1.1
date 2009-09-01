@@ -278,7 +278,7 @@ lib.utilFrame:SetScript("OnEvent", function(this, event, key, state)
 	end
 end)
 
-mixins["MakeDraggable"]=true
+mixins["EnableMouseOnAlt"]=true
 function lib.EnableMouseOnAlt(frame)
 	assert(lib.windowData[frame])
 	lib.windowData[frame].altEnable = true
