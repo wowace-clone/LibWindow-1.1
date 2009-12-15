@@ -16,8 +16,13 @@ local MINOR = tonumber(("$Revision$"):match("(%d+)"))
 local lib = LibStub:NewLibrary(MAJOR,MINOR)
 if not lib then return end
 
-local function print(msg) ChatFrame1:AddMessage(MAJOR..": "..tostring(msg)) end
+local min,max,abs = min,max,abs
+local pairs = pairs
+local tostring = tostring
+local UIParent,GetScreenWidth,GetScreenHeight,IsAltKeyDown = UIParent,GetScreenWidth,GetScreenHeight,IsAltKeyDown
+-- GLOBALS: error, ChatFrame1, assert
 
+local function print(msg) ChatFrame1:AddMessage(MAJOR..": "..tostring(msg)) end
 
 lib.utilFrame = lib.utilFrame or CreateFrame("Frame")
 lib.delayedSavePosition = lib.delayedSavePosition or {}
@@ -297,7 +302,7 @@ end
 ---------------------------------------------------------
 
 function lib:Embed(target)
-	if not target or not target[0] or not target.GetFrameType then
+	if not target or not target[0] or not target.GetObjectType then
 		error("Usage: LibWindow:Embed(frame)", 1)
 	end
 	for name, _ in pairs(mixins) do

@@ -1,4 +1,4 @@
-﻿## Interface: 30200
+﻿## Interface: 30300
 ## LoadOnDemand: 1
 ## Title: Lib: Window-1.1
 ## Notes: A library that handles the basics of "window" style frames
