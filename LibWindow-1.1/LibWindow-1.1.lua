@@ -125,6 +125,7 @@ function lib.SavePosition(frame)
 	local parent = frame:GetParent() or nilParent
 	-- No, this won't work very well with frames that aren't parented to nil or UIParent
 	local s = frame:GetScale()
+	if not s then return end
 	local left,top = frame:GetLeft()*s, frame:GetTop()*s
 	local right,bottom = frame:GetRight()*s, frame:GetBottom()*s
 	local pwidth, pheight = parent:GetWidth(), parent:GetHeight()
